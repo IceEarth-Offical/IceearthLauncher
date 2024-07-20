@@ -98,77 +98,77 @@ javaPathDesc = "경로는 다음으로 끝나야 합니다, <strong>{pathSuffix}
 jvmOptsTitle = "추가 JVM 옵션"
 jvmOptsDesc = "런타임 시 JVM에 제공되는 옵션입니다. <em>-Xms</em> 및 <em>-Xmx</em>는 포함되어서는 안 됩니다."
 launcherTabHeaderText = "런처 설정"
-launcherTabHeaderDesc = "Options related to the launcher itself."
-allowPrereleaseTitle = "Allow Pre-Release Updates."
-allowPrereleaseDesc = "Pre-Releases include new features which may have not been fully tested or integrated.<br>This will always be true if you are using a pre-release version."
-dataDirectoryTitle = "Data Directory"
-selectDataDirectory = "Select Data Directory"
-chooseFolder = "Choose Folder"
-dataDirectoryDesc = "All game files and local Java installations will be stored in the data directory.<br>Screenshots and world saves are stored in the instance folder for the corresponding server configuration."
-aboutTabHeaderText = "About"
-aboutTabHeaderDesc = "View information and release notes for the current version."
+launcherTabHeaderDesc = "런처 자체와 관련된 옵션입니다."
+allowPrereleaseTitle = "베타버전 런처 업데이트(불안정함)"
+allowPrereleaseDesc = "베타 버전에는 완전히 테스트되지 않았거나 통합되지 않았을 수 있는 새로운 기능이 포함되어 있습니다.<br>이는 베타 버전을 사용하는 경우 항상 해당됩니다."
+dataDirectoryTitle = "데이터 디렉토리"
+selectDataDirectory = "데이터 디렉토리 선택하기"
+chooseFolder = "폴더 선택하기"
+dataDirectoryDesc = "모든 게임 파일과 로컬 Java 설치는 데이터 디렉터리에 저장됩니다.<br>스크린샷과 월드 저장은 해당 서버 구성의 인스턴스 폴더에 저장됩니다."
+aboutTabHeaderText = "자세히"
+aboutTabHeaderDesc = "현재 버전에 대한 정보와 릴리스 노트를 확인하세요."
 aboutTitle = "{appName}"
-stableRelease = "Stable Release"
-versionText = "Version "
-sourceGithub = "Source (GitHub)"
-support = "Support"
-devToolsConsole = "DevTools Console"
-releaseNotes = "Release Notes"
-changelog = "Changelog"
-noReleaseNotes = "No Release Notes"
-viewReleaseNotes = "View Release Notes on GitHub"
-launcherUpdatesHeaderText = "Launcher Updates"
-launcherUpdatesHeaderDesc = "Download, install, and review updates for the launcher."
-checkForUpdates = "Check for Updates"
-whatsNew = "What's New"
-updateReleaseNotes = "Update Release Notes"
+stableRelease = "안정된 릴리스"
+versionText = "버전 "
+sourceGithub = "소스코드 (GitHub)"
+support = "지원"
+devToolsConsole = "개발자 콘솔"
+releaseNotes = "릴리스 노트"
+changelog = "변경사항"
+noReleaseNotes = "릴리스 노트가 없습니다."
+viewReleaseNotes = "GitHub에서 릴리스 노트 보기"
+launcherUpdatesHeaderText = "런처 업데이트"
+launcherUpdatesHeaderDesc = "런처 업데이트를 다운로드, 설치 및 검토하세요."
+checkForUpdates = "업데이트 확인"
+whatsNew = "새로운 소식"
+updateReleaseNotes = "릴리스 노트 업데이트"
 
 [ejs.waiting]
-waitingText = "Waiting for Microsoft.."
+waitingText = "Microsoft를 기다리는 중..."
 
 [ejs.welcome]
-continueButton = "CONTINUE"
+continueButton = "계속"
 
 
 [js.discord]
-waiting = "Waiting for Client.."
-state = "Server: {shortId}"
+waiting = "클라이언트를 기다리는중..."
+state = "서버: {shortId}"
 
 [js.index]
-microsoftLoginTitle = "Microsoft Login"
-microsoftLogoutTitle = "Microsoft Logout"
+microsoftLoginTitle = "Microsoft 로그인"
+microsoftLogoutTitle = "Microsoft 로그아웃"
 
 [js.login]
-login = "LOGIN"
-loggingIn = "LOGGING IN"
-success = "SUCCESS"
-tryAgain = "Try Again"
+login = "로그인"
+loggingIn = "로그인중.."
+success = "성공"
+tryAgain = "나중에 다시 시도해주세요"
 
 [js.login.error]
-invalidValue = "* Invalid Value"
-requiredValue = "* Required"
+invalidValue = "* 유효하지 않은 값"
+requiredValue = "* 필수"
 
 [js.login.error.unknown]
 title = "Unknown Error During Login"
 desc = "An unknown error has occurred. Please see the console for details."
 
 [js.landing.launch]
-pleaseWait = "Please wait.."
-failureTitle = "Error During Launch"
-failureText = "See console (CTRL + Shift + i) for more details."
-okay = "Okay"
+pleaseWait = "잠시만 기다려 주세요..."
+failureTitle = "실행중 오류가 발생했습니다."
+failureText = "콘솔(CTRL + Shift + i) 을 확인하여, 개발자에게 알려주세요"
+okay = "이해했습니다"
 
 [js.landing.selectedAccount]
-noAccountSelected = "No Account Selected"
+noAccountSelected = "선택된 계정이 없음"
 
 [js.landing.selectedServer]
-noSelection = "No Server Selected"
-loading = "Loading.."
+noSelection = "서버가 선택되지 않음"
+loading = "로딩중..."
 
 [js.landing.serverStatus]
-server = "SERVER"
-offline = "OFFLINE"
-players = "PLAYERS"
+server = "서버"
+offline = "오프라인"
+players = "플레이어수"
 
 [js.landing.systemScan]
 checking = "Checking system info.."
@@ -208,7 +208,7 @@ doneEnjoyServer = "Done. Enjoy the server!"
 checkConsoleForDetails = "Please check the console (CTRL + Shift + i) for more details."
 
 [js.landing.news]
-checking = "Checking for News"
+checking = "뉴스 확인하는중.."
 
 [js.landing.discord]
 loading = "Loading game.."
