@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .notification {
+            text-align: center;
+            padding: 20px;
+        }
+        .notification button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="notification">
+        <h1 id="notification-title">공지 사항</h1>
+        <p id="notification-message">메시지가 여기에 표시됩니다.</p>
+        <button id="dismiss-button">하루 동안 보지</button>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        ipcRenderer.on('notification-data', (event, arg) => {
+            document.getElementById('notification-title').innerText = arg.title;
+            document.getElementById('notification-message').innerText = arg.message;
+        });
+
+        document.getElementById('dismiss-button').addEventListener('click', () => {
+            ipcRenderer.send('dismiss-notification');
+            window.close();
+        });
+    </script>
+</body>
+</html>

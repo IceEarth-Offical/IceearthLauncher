@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helios Launcher</title>
+</head>
+<body>
+    <h1>Helios Launcher</h1>
+    <button id="show-notification">공지 사항 보기</button>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        document.getElementById('show-notification').addEventListener('click', async () => {
+            const notificationData = await fetchNotification();
+            ipcRenderer.send('show-notification', notificationData);
+        });
+
+        async function fetchNotification() {
+            try {
+                const response = await fetch('http://your-server.com/notification.json');
+                return await response.json();
+            } catch (error) {
+                console.error('Failed to fetch notification:', error);
+                return { title: 'Error', message: 'Failed to load notification.' };
+            }
+        }
+    </script>
+</body>
+</html>
