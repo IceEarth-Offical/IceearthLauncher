@@ -1,6 +1,6 @@
 appId: 'iceearthlauncher'
-productName: '아생서버 런처'
-artifactName: '${productName}-설치-${version}.${ext}'
+productName: 'iceearth-launcher'
+artifactName: '${productName}-${version}.${ext}'
 
 copyright: 'Copyright © 2024 Sejinjin'
 

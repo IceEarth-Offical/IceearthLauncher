@@ -342,6 +342,7 @@ function getPlatformIcon(filename){
     return path.join(__dirname, 'app', 'assets', 'images', `${filename}.${ext}`)
 }
 
+app.commandLine.appendSwitch('disable-gpu-shader-disk-cache');
 app.on('ready', createWindow)
 app.on('ready', createMenu)
 
