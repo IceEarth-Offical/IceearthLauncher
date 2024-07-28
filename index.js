@@ -370,7 +370,7 @@ app.on('ready', () => {
           type: 'info',
           buttons: ['닫기', '하루동안 보지 않기'],
           title: notice.title,
-          message: notice.content
+          message: notice.message
         }).then(result => {
           if (result.response === 1) {
             // If user clicked '하루동안 보지 않기', set a flag in local storage
