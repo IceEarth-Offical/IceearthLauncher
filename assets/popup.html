@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="popup" style="display: none;">
+    <h1 id="title"></h1>
+    <p id="message"></p>
+    <button id="dismiss">닫기</button>
+    <button id="dismiss-for-day">하루동안 보지 않기</button>
+  </div>
+
+  <script>
+    const { ipcRenderer } = require('electron')
+
+    ipcRenderer.on('notice', (event, notice) => {
+      document.getElementById('title').textContent = notice.title;
+      document.getElementById('message').textContent = notice.message;
+      document.getElementById('popup').style.display = 'block';
+    });
+
+    document.getElementById('dismiss').addEventListener('click', () => {
+      document.getElementById('popup').style.display = 'none';
+    });
+
+    document.getElementById('dismiss-for-day').addEventListener('click', () => {
+      localStorage.setItem('noticeDismissed', true);
+      setTimeout(() => {
+        localStorage.removeItem('noticeDismissed');
+      }, 24 * 60 * 60 * 1000); // Remove the item after 24 hours
+      document.getElementById('popup').style.display = 'none';
+    });
+  </script>
+</body>
+</html>

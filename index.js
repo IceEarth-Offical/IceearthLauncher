@@ -2,7 +2,7 @@ const remoteMain = require('@electron/remote/main')
 remoteMain.initialize()
 
 // Requirements
-const { app, BrowserWindow, ipcMain, Menu, shell } = require('electron')
+const { app, BrowserWindow, ipcMain, Menu, shell, dialog } = require('electron')
 const autoUpdater                       = require('electron-updater').autoUpdater
 const ejse                              = require('ejs-electron')
 const fs                                = require('fs')
@@ -12,6 +12,7 @@ const semver                            = require('semver')
 const { pathToFileURL }                 = require('url')
 const { AZURE_CLIENT_ID, MSFT_OPCODE, MSFT_REPLY_TYPE, MSFT_ERROR, SHELL_OPCODE } = require('./app/assets/js/ipcconstants')
 const LangLoader                        = require('./app/assets/js/langloader')
+const axios                             = require('axios')
 
 // Setup Lang
 LangLoader.setupLanguage()
@@ -359,3 +360,28 @@ app.on('activate', () => {
         createWindow()
     }
 })
+
+app.on('ready', () => {
+    // Fetch notice from FTP server
+    axios.get('https://iceearth-offical.github.io/FTP/notification/iceearth_survive.json')
+      .then(response => {
+        const notice = response.data;
+        dialog.showMessageBox({
+          type: 'info',
+          buttons: ['닫기', '하루동안 보지 않기'],
+          title: notice.title,
+          message: notice.content
+        }).then(result => {
+          if (result.response === 1) {
+            // If user clicked '하루동안 보지 않기', set a flag in local storage
+            localStorage.setItem('noticeDismissed', true);
+            setTimeout(() => {
+              localStorage.removeItem('noticeDismissed');
+            }, 24 * 60 * 60 * 1000); // Remove the item after 24 hours
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Failed to fetch notice', error);
+      });
+  });
