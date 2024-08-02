@@ -15,6 +15,6 @@ sourceGithubLink = "https://github.com/IceEarth-Offical/IceearthLauncher"
 supportLink = "https://github.com/IceEarth-Offical/IceearthLauncher/issues"
 
 [ejs.welcome]
-welcomeHeader = "아생서버 버킷에 오신것을 환영합니다"
+welcomeHeader = "아생서버에 오신것을 환영합니다"
 welcomeDescription = "재밌는 아생서버를 즐겨보세요"
 welcomeDescCTA = "어떻게 할지 모른다고요? 클릭만 하세요."
