@@ -35,4 +35,5 @@
 
 ## 다운로드
 
+**아쉽지만 맥 유저는 사용할 수 없어요**
 [GitHub Releases](https://github.com/IceEarth-Offical/IceearthLauncher/releases)에서 다운로드 할 수 있어요
